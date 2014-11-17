@@ -1,6 +1,5 @@
 #possible apache configuration
 
-
 Alias /symfony /path/to/symfony/web
 <Directory /path/to/symfony/web/>
     Order allow,deny
