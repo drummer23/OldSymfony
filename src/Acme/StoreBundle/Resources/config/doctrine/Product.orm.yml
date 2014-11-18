@@ -14,3 +14,10 @@ Acme\StoreBundle\Entity\Product:
             scale: 2
         description:
             type: text
+    manyToOne:
+            category:
+                targetEntity: Category
+                inversedBy: products
+                joinColumn:
+                    name: category_id
+                    referencedColumnName: id
