@@ -49,7 +49,10 @@ class DefaultController extends Controller
             );
         }
 
-        // ... do something, like pass the $product object into a template
+        return $this->render(
+            'AcmeStoreBundle:Default:show.html.twig',
+            array('product' => $product)
+        );
     }
 
 }
