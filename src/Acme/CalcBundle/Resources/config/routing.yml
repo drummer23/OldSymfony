@@ -1,3 +1,7 @@
 acme_calc_homepage:
     path:     /hello/{name}
     defaults: { _controller: AcmeCalcBundle:Default:index }
+
+acme_calc_crossfoot:
+    path:     /calc/crossfoot/{number}
+    defaults: { _controller: AcmeCalcBundle:Default:cross }
