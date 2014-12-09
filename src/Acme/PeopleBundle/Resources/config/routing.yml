@@ -1,0 +1,3 @@
+acme_people_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AcmePeopleBundle:Default:index }
