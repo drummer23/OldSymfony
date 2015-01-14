@@ -1,3 +1,3 @@
 acme_doctrine_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: AcmeDoctrineBundle:Default:index }
+    path:     /doctrine/create/{name}
+    defaults: { _controller: AcmeDoctrineBundle:Default:create }
