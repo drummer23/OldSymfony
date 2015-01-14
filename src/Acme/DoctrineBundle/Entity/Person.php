@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="people")
+ * @ORM\Table(name="person")
  */
-class People
+class Person
 {
     /**
      * @ORM\Column(type="integer")
@@ -48,7 +48,7 @@ class People
      * Set name
      *
      * @param string $name
-     * @return People
+     * @return Person
      */
     public function setName($name)
     {
@@ -71,7 +71,7 @@ class People
      * Set city
      *
      * @param string $city
-     * @return People
+     * @return Person
      */
     public function setCity($city)
     {
