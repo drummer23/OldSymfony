@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Acme\StoreBundle\AcmeStoreBundle(),
             new Acme\TaskBundle\AcmeTaskBundle(),
             new Acme\CalcBundle\AcmeCalcBundle(),
-            new Acme\PeopleBundle\AcmePeopleBundle(),
             new Acme\SessionBundle\AcmeSessionBundle(),
             new Acme\ServiceBundle\AcmeServiceBundle(),
             new Acme\DoctrineBundle\AcmeDoctrineBundle(),
