@@ -10,10 +10,6 @@ acme_session:
     resource: "@AcmeSessionBundle/Resources/config/routing.yml"
     prefix:   /
 
-acme_people:
-    resource: "@AcmePeopleBundle/Resources/config/routing.yml"
-    prefix:   /
-
 acme_calc:
     resource: "@AcmeCalcBundle/Resources/config/routing.yml"
     prefix:   /
