@@ -4,7 +4,8 @@ namespace Acme\DoctrineBundle\Controller;
 
 use Acme\DoctrineBundle\Entity\Person;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class DefaultController extends Controller
 {
@@ -23,6 +24,7 @@ class DefaultController extends Controller
 
         $em->persist($person);
         $em->flush();
+
 
         return new Response("<html><body>Person $name created</body></html>");
     }
