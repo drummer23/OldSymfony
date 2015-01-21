@@ -33,7 +33,7 @@ class DefaultController extends Controller
     public function showAction($id)
     {
         $person = $this->getDoctrine()
-            ->getRepository('DoctrineBundle:Person')
+            ->getRepository('AcmeDoctrineBundle:Person')
             ->find($id);
 
         if (!$person) {
@@ -42,6 +42,6 @@ class DefaultController extends Controller
             );
         }
 
-        return new JsonResponse($person);
+        return new JsonResponse((array) $person);
     }
 }
