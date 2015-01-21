@@ -4,3 +4,9 @@ acme_doctrine_create:
 acme_doctrine_show:
     path:     /doctrine/show/{id}
     defaults: { _controller: AcmeDoctrineBundle:Default:show }
+acme_doctrine_showbyname:
+    path:     /doctrine/showbyname/{name}
+    defaults: { _controller: AcmeDoctrineBundle:Default:showbyname }
+acme_doctrine_showbycity:
+    path:     /doctrine/showbycity/{city}
+    defaults: { _controller: AcmeDoctrineBundle:Default:showbycity }

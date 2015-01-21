@@ -44,4 +44,34 @@ class DefaultController extends Controller
 
         return new JsonResponse((array) $person);
     }
+
+    public function showbynameAction($name)
+    {
+        $person = $this->getDoctrine()
+            ->getRepository('AcmeDoctrineBundle:Person')
+            ->findOneByName($name);
+
+        if (!$person) {
+            throw $this->createNotFoundException(
+                'No person found for name '.$name
+            );
+        }
+
+        return new JsonResponse((array) $person);
+    }
+
+    public function showbycityAction($city)
+    {
+        $person = $this->getDoctrine()
+            ->getRepository('AcmeDoctrineBundle:Person')
+            ->findOneByCity($city);
+
+        if (!$person) {
+            throw $this->createNotFoundException(
+                'No person found for city '.$city
+            );
+        }
+
+        return new JsonResponse((array) $person);
+    }
 }
