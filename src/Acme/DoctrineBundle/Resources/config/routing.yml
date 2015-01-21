@@ -10,3 +10,6 @@ acme_doctrine_showbyname:
 acme_doctrine_showbycity:
     path:     /doctrine/showbycity/{city}
     defaults: { _controller: AcmeDoctrineBundle:Default:showbycity }
+acme_doctrine_showall:
+    path:     /doctrine/showall
+    defaults: { _controller: AcmeDoctrineBundle:Default:showall }

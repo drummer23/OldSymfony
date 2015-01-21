@@ -74,4 +74,27 @@ class DefaultController extends Controller
 
         return new JsonResponse((array) $person);
     }
+
+
+  /**
+   * This function uses a custom repository method
+   *
+   * @return JsonResponse
+   */
+    public function showallAction()
+    {
+        $persons = $this->getDoctrine()
+            ->getRepository('AcmeDoctrineBundle:Person')
+            ->findAllOrderedByID();
+
+
+        $personArray = Array();
+
+        foreach($persons as $person)
+        {
+            $personArray[] = (array)$person;
+        }
+
+        return new JsonResponse($personArray);
+    }
 }

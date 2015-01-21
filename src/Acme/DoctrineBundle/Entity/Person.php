@@ -12,7 +12,7 @@ namespace Acme\DoctrineBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\DoctrineBundle\Entity\PersonRepository")
  * @ORM\Table(name="person")
  */
 class Person
