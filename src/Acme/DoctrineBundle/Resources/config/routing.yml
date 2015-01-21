@@ -1,3 +1,6 @@
-acme_doctrine_homepage:
+acme_doctrine_create:
     path:     /doctrine/create/{name}
     defaults: { _controller: AcmeDoctrineBundle:Default:create }
+acme_doctrine_show:
+    path:     /doctrine/show/{id}
+    defaults: { _controller: AcmeDoctrineBundle:Default:show }

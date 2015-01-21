@@ -4,6 +4,7 @@ namespace Acme\DoctrineBundle\Controller;
 
 use Acme\DoctrineBundle\Entity\Person;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -27,5 +28,20 @@ class DefaultController extends Controller
 
 
         return new Response("<html><body>Person $name created</body></html>");
+    }
+
+    public function showAction($id)
+    {
+        $person = $this->getDoctrine()
+            ->getRepository('DoctrineBundle:Person')
+            ->find($id);
+
+        if (!$person) {
+            throw $this->createNotFoundException(
+                'No person found for id '.$id
+            );
+        }
+
+        return new JsonResponse($person);
     }
 }
