@@ -3,6 +3,7 @@
 namespace Acme\DoctrineBundle\Controller;
 
 use Acme\DoctrineBundle\Entity\Person;
+use Acme\DoctrineBundle\Entity\Place;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,21 +18,31 @@ class DefaultController extends Controller
 
     public function createAction($name)
     {
+        $place = new Place();
+        $place->setName('Zurich');
+        $place->setPlz('8000');
+
+
         $person = new Person();
         $person->setName($name);
-        $person->setCity('Zurich');
+        $person->setPlace($place);
 
         $em = $this->getDoctrine()->getManager();
-
+        $em->persist($place);
         $em->persist($person);
         $em->flush();
 
 
-        return new Response("<html><body>Person $name created</body></html>");
+        return new Response(
+          'Created person id: ' .$person->getId()
+          .' and place id: ' .$place->getId()
+        );
     }
 
     public function showAction($id)
     {
+
+        /** @var \Acme\DoctrineBundle\Entity\Person $person */
         $person = $this->getDoctrine()
             ->getRepository('AcmeDoctrineBundle:Person')
             ->find($id);
@@ -42,7 +53,14 @@ class DefaultController extends Controller
             );
         }
 
-        return new JsonResponse((array) $person);
+        $result = Array();
+
+        $result['id'] = $person->getId();
+        $result['name'] = $person->getName();
+        $result['place'] = $person->getPlace()->getName();
+
+
+        return new JsonResponse((array) $result);
     }
 
     public function showbynameAction($name)
@@ -60,6 +78,7 @@ class DefaultController extends Controller
         return new JsonResponse((array) $person);
     }
 
+    //TODO: recode for use with new Place table
     public function showbycityAction($city)
     {
         $person = $this->getDoctrine()
