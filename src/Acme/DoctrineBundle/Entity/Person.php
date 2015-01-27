@@ -30,9 +30,10 @@ class Person
     protected $name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\ManyToOne(targetEntity="Place", inversedBy="persons")
+     * @ORM\JoinColumn(name="place_id", referencedColumnName="id")
      */
-    protected $city;
+    protected $place;
 
     /**
      * Get id
@@ -67,26 +68,27 @@ class Person
         return $this->name;
     }
 
+
     /**
-     * Set city
+     * Set place
      *
-     * @param string $city
+     * @param \Acme\DoctrineBundle\Entity\Place $place
      * @return Person
      */
-    public function setCity($city)
+    public function setPlace(\Acme\DoctrineBundle\Entity\Place $place = null)
     {
-        $this->city = $city;
+        $this->place = $place;
 
         return $this;
     }
 
     /**
-     * Get city
+     * Get place
      *
-     * @return string 
+     * @return \Acme\DoctrineBundle\Entity\Place 
      */
-    public function getCity()
+    public function getPlace()
     {
-        return $this->city;
+        return $this->place;
     }
 }
