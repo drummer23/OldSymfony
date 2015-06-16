@@ -1,4 +1,4 @@
 services:
-#    acme_logger.example:
-#        class: Acme\LoggerBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    acme_logger.someservice:
+        class: Acme\LoggerBundle\Service\SomeService
+        arguments: ["@logger"]
