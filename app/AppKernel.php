@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Acme\RestBundle\AcmeRestBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Acme\LoggerBundle\AcmeLoggerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
