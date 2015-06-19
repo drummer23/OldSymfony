@@ -1,3 +1,7 @@
+acme_ui:
+    resource: "@AcmeUiBundle/Resources/config/routing.yml"
+    prefix:   /
+
 acme_logger:
     resource: "@AcmeLoggerBundle/Resources/config/routing.yml"
     prefix:   /
