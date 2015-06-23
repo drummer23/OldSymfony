@@ -3,5 +3,8 @@
 {% block title %}My cool blog posts{% endblock %}
 
 {% block body %}
-    <h1>Welcome to the Dog App</h1>
+    {% for entry in blog_entries %}
+        <h2>{{ entry.title }}</h2>
+        <p>{{ entry.body }}</p>
+    {% endfor %}
 {% endblock %}
