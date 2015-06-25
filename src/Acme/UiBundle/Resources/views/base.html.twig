@@ -22,13 +22,17 @@
     <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap -->
-    <link href="{{ asset('bundles/acmeui/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('bundles/acmeui/css/style.css') }}"  />
+    {% stylesheets 'bundles/acmeui/css/*' %}
+        <link href="{{ asset_url }}" rel="stylesheet">
+    {% endstylesheets %}
+
 
 </head>
 <body>
-<div id="sidebar">
+<div id="title"><h1>the Doggy App</h1></div>
+<div id="sidebar" class="pull-left">
     {% block sidebar %}
         <ul>
             <li><a href="/">Home</a></li>
@@ -42,8 +46,8 @@
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ asset('bundles/acmeui/js/jquery.js') }}"></script>
+<script src="{{ asset('lib/js/jquery.js') }}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('bundles/acmeui/js/bootstrap.js') }}"></script>
+<script src="{{ asset('lib/js/bootstrap.js') }}"></script>
 </body>
 </html>
