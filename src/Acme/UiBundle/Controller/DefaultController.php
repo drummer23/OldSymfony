@@ -8,6 +8,15 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AcmeUiBundle:Default:index.html.twig');
+
+        $dogs = array();
+
+        $dogs[] = ['name' => 'Bello', 'race' => 'Terrier'];
+        $dogs[] = ['name' => 'Wuffy', 'race' => 'Terrier'];
+        $dogs[] = ['name' => 'Baily', 'race' => 'Terrier'];
+
+
+
+        return $this->render('AcmeUiBundle:Default:index.html.twig',array('dogs' => $dogs));
     }
 }

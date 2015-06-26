@@ -30,24 +30,31 @@
 
 
 </head>
-<body>
-<div id="title"><h1>the Doggy App</h1></div>
-<div id="sidebar" class="pull-left">
-    {% block sidebar %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog"></a></li>
-        </ul>
-    {% endblock %}
-</div>
 
-<div id="content">
-    {% block body %}{% endblock %}
+<body>
+
+<div id="wrapper">
+    <div id="title"><h1>the Dog App</h1></div>
+    <div id="sidebar" class="pull-left">
+        {% block sidebar %}
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block body %}{% endblock %}
+    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('lib/js/jquery.js') }}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('lib/js/bootstrap.js') }}"></script>
+
 </body>
+
 </html>

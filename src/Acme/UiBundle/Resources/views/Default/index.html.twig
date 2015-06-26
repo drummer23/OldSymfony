@@ -3,5 +3,21 @@
 {% block subtitle %}My cool blog posts{% endblock %}
 
 {% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Race</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dog in dogs %}
+            <tr>
+                <td>{{ dog.name }}</td>
+                <td>{{ dog.race }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
