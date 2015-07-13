@@ -3,8 +3,7 @@
 {% block subtitle %}My cool blog posts{% endblock %}
 
 {% block body %}
-    {% for entry in blog_entries %}
-        <h2>{{ entry.title }}</h2>
-        <p>{{ entry.body }}</p>
-    {% endfor %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}

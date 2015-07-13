@@ -1,3 +1,6 @@
 acme_ui_homepage:
     path:     /ui/
     defaults: { _controller: AcmeUiBundle:Default:index }
+acme_ui_create:
+    path:     /ui/create
+    defaults: { _controller: AcmeUiBundle:Default:new }
