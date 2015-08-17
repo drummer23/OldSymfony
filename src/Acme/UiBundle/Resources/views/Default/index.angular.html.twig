@@ -1,0 +1,26 @@
+{% extends 'AcmeUiBundle::base.html.twig' %}
+
+{% block subtitle %}My cool blog posts{% endblock %}
+
+{% block body %}
+    <div ng-app="myApp">
+        <div ng-controller="DogCtrl">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Race</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="dog in dogs">
+                        <td>[[ dog.name ]]</td>
+                        <td>[[ dog.race ]]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

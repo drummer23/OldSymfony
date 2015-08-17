@@ -1,6 +1,12 @@
 acme_ui_homepage:
     path:     /ui/
     defaults: { _controller: AcmeUiBundle:Default:index }
+acme_ui_homepage_view:
+    path:     /ui/view
+    defaults: { _controller: AcmeUiBundle:Default:view }
+acme_ui_homepage_list:
+    path:     /ui/list
+    defaults: { _controller: AcmeUiBundle:Default:list }
 acme_ui_create:
     path:     /ui/create
     defaults: { _controller: AcmeUiBundle:Default:new }
